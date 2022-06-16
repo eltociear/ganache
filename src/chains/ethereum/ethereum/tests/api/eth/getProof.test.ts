@@ -11,7 +11,7 @@ import { Address } from "@ganache/ethereum-address";
 
 describe("api", () => {
   describe("eth", () => {
-    describe("getProof", () => {
+    describe.only("getProof", () => {
       let provider: EthereumProvider;
       let contract: CompileOutput;
       let ownerAddress: string;
@@ -59,7 +59,12 @@ describe("api", () => {
             contractAccount.address.toString()
           ])
         );
+
         const contractHashData = Data.from(keccak(deployedCode.toBuffer()));
+        console.log({
+          deployedCode: Data.toString(deployedCode.toBuffer()),
+          hash: contractHashData.toString()
+        });
         const contractAccountBalance = await provider.send("eth_getBalance", [
           contractAccount.address.toString()
         ]);
