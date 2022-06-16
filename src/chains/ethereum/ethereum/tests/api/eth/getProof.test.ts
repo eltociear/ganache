@@ -62,6 +62,7 @@ describe("api", () => {
 
         const contractHashData = Data.from(keccak(deployedCode.toBuffer()));
         console.log({
+          initCode: contract.code,
           deployedCode: Data.toString(deployedCode.toBuffer()),
           hash: contractHashData.toString()
         });
