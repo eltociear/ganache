@@ -67,10 +67,6 @@ describe("api", () => {
         contractAccount.codeHash = contractHashData.toBuffer();
         contractAccount.nonce = Quantity.from(0x1);
         contractAccount.balance = Quantity.from(contractAccountBalance);
-        contractAccount.codeHash = Buffer.from(
-          "67b59c91b38bdcd65d2f8129925a939a1469b88b66ef65395d22f74476582a5f",
-          "hex"
-        );
         contractAccount.stateRoot = Buffer.from(
           "fe26ce2b5dafd303bdbd9adbd1bbc1ef59fceea4f81c282158ab624e2fd1787d",
           "hex"
